@@ -1,0 +1,1 @@
+int main() {    int arr[5] = {1, 2, 3, 4, 5};    int *ptr = (int *)malloc(sizeof(int) * 5);    if (ptr == NULL) {        fprintf(stderr, "Memory allocation failed\n");        return 1;    }    memcpy(ptr, arr, sizeof(int) * 5);    free(ptr);    // Error: Accessing freed memory    printf("%d\n", ptr[0]);    return 0;}
